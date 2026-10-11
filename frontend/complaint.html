@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File Complaint | Vericlaim</title>
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Vericlaim</div>
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="user-dashboard.html">Dashboard</a>
+      <a href="departments.html">Departments</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="login">Logout</a>
+    </div>
+  </header>
+
+  <section class="dashboard-hero">
+    <h1>File New Complaint</h1>
+    <p>Submit your complaint with image and details so the right department can take action.</p>
+  </section>
+
+  <section class="page-section">
+    <div class="info-card complaint-form-card">
+      <form class="complaint-form">
+        <label>Complaint Title</label>
+        <input type="text" placeholder="Enter complaint title" required>
+
+        <label>Department</label>
+        <select required>
+          <option value="">Select Department</option>
+          <option>Water Department</option>
+          <option>Roads Department</option>
+          <option>Electricity Department</option>
+          <option>Sanitation Department</option>
+          <option>Health Department</option>
+        </select>
+
+        <label>Location / Address</label>
+        <input type="text" placeholder="Enter location or address" required>
+
+        <label>Contact Number</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Complaint Description</label>
+        <textarea rows="6" placeholder="Write full complaint details here..." required></textarea>
+
+        <label>Upload Complaint Image</label>
+        <input type="file" accept="image/*" required>
+
+        <label>Preferred Follow-up Method</label>
+        <select required>
+          <option value="">Select option</option>
+          <option>Email</option>
+          <option>Phone Call</option>
+          <option>Message</option>
+        </select>
+
+        <button type="submit">Submit Complaint</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Vericlaim</title>
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Vericlaim</div>
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="departments.html">Departments</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="login">Logout</a>
+    </div>
+  </header>
+
+  <section class="dashboard-hero">
+    <h1>Welcome, Admin</h1>
+    <p>Manage complaints for your department, update status, and contact users.</p>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Dashboard Summary</h2>
+    <div class="grid-layout">
+      <div class="info-card summary-card" onclick="showSummary('New Filed', '4 new complaints')">
+        <h3>New Filed</h3>
+        <p>4 Complaints</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('In Progress', '3 complaints in progress')">
+        <h3>In Progress</h3>
+        <p>3 Complaints</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('Completed', '6 completed complaints')">
+        <h3>Completed</h3>
+        <p>6 Complaints</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('All Complaints', '13 total complaints')">
+        <h3>Total</h3>
+        <p>13 Complaints</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Received Complaints</h2>
+
+    <div class="admin-list">
+
+      <div class="admin-complaint-card">
+        <div class="admin-complaint-header">
+          <h3>Road Damage Near Main Street</h3>
+          <span class="status in-progress">In Progress</span>
+        </div>
+        <p><strong>User:</strong> Aashritha Yedla</p>
+        <p><strong>Submitted:</strong> 05 May 2026, 5:00 PM</p>
+        <p><strong>Department:</strong> Roads Department</p>
+        <button onclick="toggleDetails('detail1')">View Details</button>
+
+        <div class="complaint-extra" id="detail1">
+          <img src="user-complaint1.jpg" alt="Complaint image">
+          <p><strong>Description:</strong> Big pothole in front of the house causing vehicle trouble.</p>
+          <p><strong>Deadline:</strong> 10 May 2026</p>
+          <p><strong>User Contact:</strong> aashritha@email.com | +91 98765 43210</p>
+          <div class="message-box">
+            <input type="text" placeholder="Send message to user">
+            <input type="file">
+            <button>Send Update</button>
+          </div>
+          <div class="track-buttons">
+            <button onclick="setStatus(this, 'new')">Mark New</button>
+            <button onclick="setStatus(this, 'progress')">In Progress</button>
+            <button onclick="setStatus(this, 'completed')">Completed</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-complaint-card">
+        <div class="admin-complaint-header">
+          <h3>Water Supply Not Working</h3>
+          <span class="status pending">New Filed</span>
+        </div>
+        <p><strong>User:</strong> Ravi Kumar</p>
+        <p><strong>Submitted:</strong> 04 May 2026, 11:30 AM</p>
+        <p><strong>Department:</strong> Water Department</p>
+        <button onclick="toggleDetails('detail2')">View Details</button>
+
+        <div class="complaint-extra" id="detail2">
+          <img src="user-complaint2.jpg" alt="Complaint image">
+          <p><strong>Description:</strong> No water supply in our area for 2 days.</p>
+          <p><strong>Deadline:</strong> 09 May 2026</p>
+          <p><strong>User Contact:</strong> ravi@email.com | +91 88888 88888</p>
+          <div class="message-box">
+            <input type="text" placeholder="Send message to user">
+            <input type="file">
+            <button>Send Update</button>
+          </div>
+          <div class="track-buttons">
+            <button onclick="setStatus(this, 'new')">Mark New</button>
+            <button onclick="setStatus(this, 'progress')">In Progress</button>
+            <button onclick="setStatus(this, 'completed')">Completed</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-complaint-card">
+        <div class="admin-complaint-header">
+          <h3>Street Light Repaired</h3>
+          <span class="status completed">Completed</span>
+        </div>
+        <p><strong>User:</strong> Meena Sharma</p>
+        <p><strong>Submitted:</strong> 01 May 2026, 8:20 AM</p>
+        <p><strong>Department:</strong> Electricity Department</p>
+        <button onclick="toggleDetails('detail3')">View Details</button>
+
+        <div class="complaint-extra" id="detail3">
+          <img src="user-complaint3.jpg" alt="Complaint image">
+          <p><strong>Description:</strong> Street light was not working near the bus stop.</p>
+          <p><strong>Deadline:</strong> 04 May 2026</p>
+          <p><strong>User Contact:</strong> meena@email.com | +91 77777 77777</p>
+          <div class="message-box">
+            <input type="text" placeholder="Send message to user">
+            <input type="file">
+            <button>Send Update</button>
+          </div>
+          <div class="track-buttons">
+            <button onclick="setStatus(this, 'new')">Mark New</button>
+            <button onclick="setStatus(this, 'progress')">In Progress</button>
+            <button onclick="setStatus(this, 'completed')">Completed</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="page-section">
+    <h2 class="page-title">Department Profile</h2>
+    <div class="info-card account-card">
+      <p><strong>Admin Name:</strong> Rajesh Kumar</p>
+      <p><strong>Department:</strong> Roads Department</p>
+      <p><strong>Email:</strong> roads.admin@vericlaim.com</p>
+      <p><strong>Phone:</strong> +91 90000 00002</p>
+      <p><strong>Office Address:</strong> 21 Road Office Street, Hyderabad</p>
+      <p><strong>Working Time:</strong> Mon - Sat, 9:00 AM - 6:00 PM</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showSummary(title, text) {
+      alert(title + ": " + text);
+    }
+
+    function setStatus(btn, status) {
+      alert("Status updated to: " + status);
+    }
+  </script>
+
+</body>
+</html>

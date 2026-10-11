@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "dataset_root": "C:\\Users\\Ashritha\\OneDrive\\Desktop\\project\\complaint_system\\ai-service\\training\\image_dataset",
+  "total_samples": 4,
+  "class_counts": {
+    "real": 2,
+    "ai_generated": 2,
+    "manipulated": 0
+  },
+  "class_mean_size": {
+    "real": 148381.0,
+    "ai_like": 3188036.0
+  },
+  "labels": {
+    "real": "real",
+    "ai_like": [
+      "ai_generated",
+      "manipulated"
+    ]
+  }
+}

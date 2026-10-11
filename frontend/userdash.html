@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard | Vericlaim</title>
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Vericlaim</div>
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="user-dashboard.html">Dashboard</a>
+      <a href="departments.html">Departments</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" class="login">Logout</a>
+    </div>
+  </header>
+
+  <section class="dashboard-hero">
+    <h1>Welcome, <span id="userName">User</span></h1>
+    <p>View your complaints, track progress, and manage your account.</p>
+    <a href="complaint.html" class="register">File New Complaint</a>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Complaint Summary</h2>
+    <div class="grid-layout">
+      <div class="info-card summary-card" onclick="showSummary('Filed', 'Road damage, Water issue, Street light issue')">
+        <h3>Filed</h3>
+        <p>3 Complaints</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('Pending', 'Water issue, Drainage issue')">
+        <h3>Pending</h3>
+        <p>2 Complaints</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('In Progress', 'Road damage complaint')">
+        <h3>In Progress</h3>
+        <p>1 Complaint</p>
+      </div>
+      <div class="info-card summary-card" onclick="showSummary('Completed', 'Street light issue')">
+        <h3>Completed</h3>
+        <p>1 Complaint</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Complaint History</h2>
+
+    <div class="complaint-card">
+      <img src="user-complaint1.jpg" alt="Submitted complaint image">
+      <div class="complaint-details">
+        <h3>Road Damage Near Main Street</h3>
+        <p><strong>Description:</strong> Big pothole in front of the house causing vehicle trouble.</p>
+        <p><strong>Filed On:</strong> 05 May 2026, 5:00 PM</p>
+        <p><strong>Deadline:</strong> 10 May 2026</p>
+        <p><strong>Department:</strong> Roads Department</p>
+        <p><strong>Department Contact:</strong> roads@vericlaim.com | +91 90000 00002</p>
+        <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+
+        <div class="progress-images">
+          <img src="submitted.png" alt="Submitted">
+          <img src="progress.png" alt="In Progress">
+        </div>
+      </div>
+    </div>
+
+    <div class="complaint-card">
+      <img src="user-complaint2.jpg" alt="Submitted complaint image">
+      <div class="complaint-details">
+        <h3>Water Supply Not Working</h3>
+        <p><strong>Description:</strong> No water supply from the last 2 days in our area.</p>
+        <p><strong>Filed On:</strong> 04 May 2026, 11:30 AM</p>
+        <p><strong>Deadline:</strong> 09 May 2026</p>
+        <p><strong>Department:</strong> Water Department</p>
+        <p><strong>Department Contact:</strong> water@vericlaim.com | +91 90000 00001</p>
+        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+
+        <div class="progress-images">
+          <img src="submitted.png" alt="Submitted">
+        </div>
+      </div>
+    </div>
+
+    <div class="complaint-card">
+      <img src="user-complaint3.jpg" alt="Submitted complaint image">
+      <div class="complaint-details">
+        <h3>Street Light Repaired</h3>
+        <p><strong>Description:</strong> Street light was not working near the bus stop.</p>
+        <p><strong>Filed On:</strong> 01 May 2026, 8:20 AM</p>
+        <p><strong>Deadline:</strong> 04 May 2026</p>
+        <p><strong>Department:</strong> Electricity Department</p>
+        <p><strong>Department Contact:</strong> electricity@vericlaim.com | +91 90000 00003</p>
+        <p><strong>Status:</strong> <span class="status completed">Completed</span></p>
+
+        <div class="progress-images">
+          <img src="submitted.png" alt="Submitted">
+          <img src="progress.png" alt="In Progress">
+          <img src="completed.png" alt="Completed">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Complaint Track</h2>
+    <div class="info-card track-box">
+      <p>Submitted → Reviewed → Assigned → In Progress → Completed</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <h2 class="page-title">Recent Updates</h2>
+    <div class="info-card">
+      <p>Your road complaint has been assigned to the Roads Department.</p>
+      <p>Your water complaint is waiting for review.</p>
+      <p>Your street light complaint has been completed successfully.</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <h2 class="page-title">Account Info</h2>
+    <div class="info-card account-card">
+      <p><strong>Name:</strong> <span id="accountName">User Name</span></p>
+      <p><strong>Email:</strong> user@example.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Address:</strong> Hyderabad, Telangana</p>
+      <p><strong>Authority Details:</strong> Citizen Account</p>
+    </div>
+  </section>
+
+  <script>
+    const storedName = localStorage.getItem("loggedInUser") || "User";
+    document.getElementById("userName").textContent = storedName;
+    document.getElementById("accountName").textContent = storedName;
+
+    function showSummary(type, items) {
+      alert(type + " complaints:\n" + items);
+    }
+  </script>
+
+</body>
+</html>

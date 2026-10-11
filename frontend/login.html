@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Complaint System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-box">
+    <h2>Login</h2>
+
+    <form>
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" />
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" />
+
+      <label>Login As</label>
+      <select>
+        <option>User</option>
+        <option>Admin</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>New user? <a href="register-user.html">Register as User</a></p>
+    <p>New admin? <a href="register-admin.html">Register as Admin</a></p>
+    <p><a href="index.html">Back to Home</a></p>
+  </div>
+<script>
+  localStorage.setItem("token", data.token);
+window.location.href = "/dashboard.html";
+</script>
+</body>
+</html>
